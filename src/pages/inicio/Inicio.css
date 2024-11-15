@@ -1,0 +1,52 @@
+main .primeiraSection {
+  background-image: url("./imgs/backgroundMain.png");
+  background-size: cover;
+  background-position: center;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+}
+main .primeiraSection p {
+  font-family: "Roboto";
+  font-size: 32px;
+  line-height: 37.5px;
+  font-weight: 700;
+  width: 20%;
+  margin-left: 11vw;
+}
+main .segundaSection {
+  height: 70vh;
+  flex-direction: column;
+  display: flex;
+  justify-content: space-evenly;
+}
+main .segundaSection h2 {
+  color: #005695;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 48.41px;
+  width: 30%;
+  display: flex;
+  justify-content: space-evenly;
+}
+main .segundaSection article {
+  display: flex;
+  justify-content: space-evenly;
+}
+main .segundaSection article figure {
+  border-radius: 10px;
+  background-color: rgba(1, 87, 148, 0.3019607843);
+  width: 19%;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+main .segundaSection article figure figcaption {
+  color: #000000;
+  font-size: 22px;
+  font-weight: 400;
+  width: 76%;
+  text-align: center;
+}/*# sourceMappingURL=Inicio.css.map */
