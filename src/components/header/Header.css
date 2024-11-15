@@ -8,7 +8,7 @@
 }
 
 header {
-  background-color: #001B2F;
+  background: linear-gradient(to right, #001B2F, #005695);
   height: 15vh;
   display: flex;
   justify-content: space-between;
