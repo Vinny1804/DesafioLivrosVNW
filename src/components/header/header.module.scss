@@ -1,0 +1,84 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: "Inter";
+    text-decoration: none;
+}
+
+header {
+    background: linear-gradient(to right, #001B2F, #005695);
+    height: 15vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+      
+    .logoHeader {
+        display: flex;
+        width: 20%;
+        margin-left: 2%;
+        
+        img {
+            width: 58.76px;
+            height: 61.21px;
+            margin-bottom: 20px;
+        }
+    
+        h1 {
+            font-size: 30px;
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+        }
+    }
+    .navHeader {
+        width: 50%;
+        font-size: 20px;        
+
+        ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;             
+        }
+    }
+    .barraDeBusca {
+        border: solid 2px white;
+        border-radius: 20px;
+        margin-right: 2%;
+        width: 15%;
+        display: flex;
+        align-items: center; 
+        justify-content: space-between;
+    
+        input {
+            border-radius: 20px;
+            font-size: 15px;
+            height: 5vh;
+            text-align: center;
+            background-color: transparent;
+            border: none;
+            width: 100%;
+        }
+    
+        input::placeholder {
+            color: white;
+        }
+    
+        button {
+            background-color: transparent;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 5vh;
+            width: 15%;
+            margin-right: 5%;
+        }
+    }
+    
+}
