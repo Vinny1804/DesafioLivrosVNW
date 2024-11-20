@@ -1,0 +1,38 @@
+.footer {
+    height: 15vh;
+    background-color: #005695;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.sociais {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+.telefone {
+    display: flex;
+    align-items: center;
+    margin-left: 2%;
+    font-weight: 700;
+    font-size: 16px;
+}
+.logoSociais {
+    width: 13%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-right: 2%;
+}
+.info {
+    background: #232020;
+    height: 7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-weight: 700;
+    font-size: 15px;
+}
