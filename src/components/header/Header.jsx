@@ -10,7 +10,7 @@ import lupa from '../../assets/lupa.png'
 export default function Header() {
     return (
    <BrowserRouter>
-        <header>
+        <header className={s.header}>
             <section className={s.logoHeader}>
                 <img src={logo} alt="Logo em formato de um livro aberto" />
                 <h1>Livros Vai na Web</h1>
