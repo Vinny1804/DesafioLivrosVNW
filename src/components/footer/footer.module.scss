@@ -5,26 +5,25 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    color: white;
 }
 .sociais {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 94vw;
     height: 100%;
 }
 .telefone {
     display: flex;
     align-items: center;
-    margin-left: 2%;
     font-weight: 700;
     font-size: 16px;
 }
 .logoSociais {
-    width: 13%;
+    width: 14%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin-right: 2%;
 }
 .info {
     background: #232020;

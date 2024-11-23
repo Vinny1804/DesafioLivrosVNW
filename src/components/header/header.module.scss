@@ -3,16 +3,19 @@
     height: 12vh;
     display: flex;
     justify-content: space-between;
-    align-items: center;    
+    align-items: center;
+    color: white;  
+    a {
+        color: white;
+    }
 }
 .logoHeader {
     display: flex;
-    width: 20%;
-    margin-left: 2%;   
+    margin-left: 3%;  
+      
     img {
-        width: 58.76px;
-        height: 61.21px;
         margin-bottom: 20px;
+        padding-right: 10px;
     }
     h1 {
         font-size: 30px;
@@ -22,7 +25,7 @@
     }
 }
 .navHeader {
-    width: 50%;
+    width: 35%;
     font-size: 20px;        
     ul {
         list-style: none;
@@ -34,8 +37,8 @@
 .barraDeBusca {
     border: solid 2px white;
     border-radius: 20px;
-    margin-right: 2%;
-    width: 15%;
+    margin-right: 3%;
+    width: 17%;
     display: flex;
     align-items: center; 
     justify-content: space-between;
@@ -47,6 +50,7 @@
         background-color: transparent;
         border: none;
         width: 100%;
+        color: white;
     }
     input::placeholder {
         color: white;

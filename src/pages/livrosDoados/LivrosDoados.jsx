@@ -5,8 +5,7 @@ export default function LivrosDoados() {
     return (
         <section className={s.livrosDoados}>
             <h2>Livros Doados</h2>
-
-            {/*section'listaDeLivros' criada para adicionar futuros livros*/}
+            
             <section className={s.listaDeLivros}>
 
                 <section className={s.Livro1}>
@@ -18,6 +17,7 @@ export default function LivrosDoados() {
                     </div>
                 </section>
             </section>
+
         </section>
     )
 }
