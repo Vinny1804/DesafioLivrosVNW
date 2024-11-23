@@ -21,7 +21,7 @@ O projeto está sendo desenvolvido por etapas, conforme o cronograma abaixo:
 * **Checkpoint 1: Header** :white_check_mark:
 * **Checkpoint 2: Main** :white_check_mark:
 * **Checkpoint 3: Continuação Main/Início Footer** :white_check_mark:
-* Checkpoint 4: "Livros Doados" / "Quero Doar"
+* **Checkpoint 4: "Livros Doados" / "Quero Doar"** :white_check_mark:
 * Checkpoint 5: Início Responsivo
 * Checkpoint 6: Continuação Responsivo
 * Checkpoint 7: Finalização
