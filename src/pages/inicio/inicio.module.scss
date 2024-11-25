@@ -16,7 +16,8 @@
     }
 }
 .segundaSection {
-    height: 90vh;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
     flex-direction: column;
     display: flex;
     justify-content: space-evenly;
@@ -72,11 +73,13 @@
             width: 100%;
         }
         .cardsSection {
-            //flex-direction: column;
-            border: solid red;
+            
+            flex-direction: column;
+            //border: solid red;
             align-items: center;
             .cards {
                 width: 70vw;
+                margin: 5%;
                 p {
                 
                 }
