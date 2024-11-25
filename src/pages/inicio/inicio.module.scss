@@ -1,53 +1,84 @@
-main {
-    .primeiraSection{
-        background-image: url('../../assets/backgroundMain.png');
+.primeiraSection {
+    background-image: url('../../assets/backgroundMain.png');
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    h2 {
+        font-family: 'Roboto';
+        font-size: 32px;
+        line-height: 37.5px;
+        font-weight: 700;
+        width: 20%;
+        margin-left: 11vw;
+        color: white;
+    }
+}
+.segundaSection {
+    height: 90vh;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-evenly;
+    h2 {
+        color: #005695;
+        font-size: 40px;
+        font-weight: 500;
+        line-height: 48.41px;
+        width: 30%;
+        display: flex;
+        justify-content: space-around;
+    }
+    .cardsSection {
+        display: flex;
+        justify-content: space-evenly;
+        .cards {
+            border-radius: 10px;
+            background-color: #0157944D;
+            width: 20vw;
+            height: 40vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            p {
+                color: #000000;
+                font-size: 22px;
+                font-weight: 400;
+                width: 76%;
+                text-align: center;
+            }
+        }
+    }
+}
+    
+@media (max-width: 390px) {
+    .primeiraSection {
         background-size: cover;
         background-position: center;
-        height: 70vh;
-        display: flex;
-        align-items: center;
         h2 {
-            font-family: 'Roboto';
-            font-size: 32px;
-            line-height: 37.5px;
-            font-weight: 700;
-            width: 20%;
-            margin-left: 11vw;
-            color: white;
+            width: 100%;
+            height: 30%;
+            margin-left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
         }
     }
     .segundaSection {
-        height: 90vh;
-        flex-direction: column;
-        display: flex;
-        justify-content: space-evenly;
         h2 {
-            color: #005695;
-            font-size: 40px;
-            font-weight: 500;
-            line-height: 48.41px;
-            width: 30%;
-            display: flex;
-            justify-content: space-around;
+            font-size: 35px;
+            width: 100%;
         }
         .cardsSection {
-            display: flex;
-            justify-content: space-evenly;
+            //flex-direction: column;
+            border: solid red;
+            align-items: center;
             .cards {
-                border-radius: 10px;
-                background-color: #0157944D;
-                width: 20vw;
-                height: 40vh;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: space-evenly;
+                width: 70vw;
                 p {
-                    color: #000000;
-                    font-size: 22px;
-                    font-weight: 400;
-                    width: 76%;
-                    text-align: center;
+                
                 }
             }
         }

@@ -68,3 +68,32 @@
         margin-right: 5%;
     }
 }
+
+@media (max-width: 390px) {
+    .header {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .logoHeader {
+        height: 60%;
+        margin-top: 2%;
+        img {
+            height: 50px;
+            width: 50px;
+        }
+        h1 {
+            font-size: 22px;
+        }
+    }
+    .navHeader {
+        width: 100%;
+        ul {
+            height: 4vh;        
+        }
+    }
+    .barraDeBusca {
+        display: none;
+    }
+}
