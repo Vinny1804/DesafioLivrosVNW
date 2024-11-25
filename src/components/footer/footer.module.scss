@@ -37,5 +37,30 @@
 }
 
 @media (max-width: 390px) {
-
+    .footer {
+        height: 20vh;
+    }
+    .sociais {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        img {
+            width: 30px;
+            height: 30px;
+        }
+    }
+    .telefone {
+        font-size: 14px;
+    }
+    .logoSociais{
+        width: 70%;
+    }
+    .info {
+        height: 13vh;
+        p {
+            width: 65%;
+            text-align: center;
+            font-size: 13px;
+        }
+    }
 }
