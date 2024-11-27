@@ -29,6 +29,7 @@
         width: 30%;
         display: flex;
         justify-content: space-around;
+        margin-bottom: 3%;
     }
     .cardsSection {
         display: flex;
@@ -73,9 +74,7 @@
             width: 100%;
         }
         .cardsSection {
-            
             flex-direction: column;
-            //border: solid red;
             align-items: center;
             .cards {
                 width: 70vw;
