@@ -8,7 +8,7 @@ Este projeto está sendo desenvolvido para fins de estudo com o objetivo de cria
 * **React:** Biblioteca JavaScript para criação da interface de usuário.
 * **SCSS:** Pré-processador CSS para organizar e otimizar os estilos.
 * **HTML:** Estruturação básica da página.
-* **CSS:** Estilização e layout.
+  
 
 # 🎨 Design no Figma
 O design da página foi disponibilizado pela Vai na Web e pode ser consultado como recurso visual durante o desenvolvimento. Você pode visualizar o modelo final no seguinte link:
@@ -23,5 +23,5 @@ O projeto está sendo desenvolvido por etapas, conforme o cronograma abaixo:
 * **Checkpoint 3: Continuação Main/Início Footer** :white_check_mark:
 * **Checkpoint 4: "Livros Doados" / "Quero Doar"** :white_check_mark:
 * **Checkpoint 5: Início Responsivo** :white_check_mark:
-* Checkpoint 6: Continuação Responsivo
-* Checkpoint 7: Finalização
+* **Checkpoint 6: Continuação Responsivo** :white_check_mark:
+* **Checkpoint 7: Finalização** :white_check_mark:
