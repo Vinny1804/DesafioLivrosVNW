@@ -14,7 +14,7 @@
     border: solid #005695;
     border-radius: 20px;
     margin-top: 1%;
-    width: 25vw;
+    width: 35%;
     height: 60vh;
     display: flex;
     flex-direction: column;
@@ -65,6 +65,7 @@
     border-radius: 10px;
     font-size: 20px;
     color: white;
+    cursor: pointer;
 }
 
 @media (max-width: 390px) {
@@ -81,8 +82,8 @@
     .tituloFormulario {
         
         img {
-           width: 45px;
-           height: 45px; 
+            width: 45px;
+            height: 45px; 
         }
         h3 {
             font-size: 20px;
