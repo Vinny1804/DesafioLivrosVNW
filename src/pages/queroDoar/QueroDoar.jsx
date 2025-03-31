@@ -9,22 +9,6 @@ export default function QueroDoar() {
     const [autor, setAutor] = useState("")
     const [image_url, setImage_url] = useState("")
 
-    const capturaTitulo = (e) => {
-        setTitulo(e.target.value)
-    }
-
-    const capturaCategoria = (e) => {
-        setCategoria(e.target.value)
-    }
-
-    const capturaAutor = (e) => {
-        setAutor(e.target.value)
-    }
-
-    const capturaImage_Url = (e) => {
-        setImage_url(e.target.value)
-    }
-
     const enviarDados = async() => {
 
         const endPointApi = "https://api-livros-lb7r.onrender.com/doar"
@@ -35,9 +19,14 @@ export default function QueroDoar() {
             autor,
             image_url
         }
-
         await axios.post(endPointApi, dadosAEnviar)
-        
+
+        setTitulo('')
+        setCategoria('')
+        setAutor('')
+        setImage_url('')
+
+        alert("Doação recebida! Obrigado!")
     }
 
     return (
@@ -52,12 +41,39 @@ export default function QueroDoar() {
                 </div>
 
                 <form className={s.forms} onSubmit={(e) => e.preventDefault()}>
-                    <input className={s.inputsFormulario} type="text" placeholder='Titulo' onChange={capturaTitulo} />
-                    <input className={s.inputsFormulario} type="text" placeholder='Categoria' onChange={capturaCategoria} required/>
-                    <input className={s.inputsFormulario} type="text" placeholder='Autor' onChange={capturaAutor} required/>
-                    <input className={s.inputsFormulario} type="text" placeholder='Link da Imagem' onChange={capturaImage_Url} required/>
+
+                    <input className={s.inputsFormulario}
+                    type="text"
+                    placeholder='Titulo'
+                    value={titulo}
+                    onChange={(e) => setTitulo(e.target.value)}
+                    required/>
+
+                    <input className={s.inputsFormulario}
+                    type="text"
+                    placeholder='Categoria'
+                    value={categoria}
+                    onChange={(e) => setCategoria(e.target.value)}
+                    required/>
+
+                    <input className={s.inputsFormulario}
+                    type="text"
+                    placeholder='Autor'
+                    value={autor}
+                    onChange={(e) => setAutor(e.target.value)}
+                    required/>
+
+                    <input className={s.inputsFormulario}
+                    type="text"
+                    placeholder='Link da Imagem'
+                    value={image_url}
+                    onChange={(e) => setImage_url(e.target.value)}
+                    required/>
                     
-                    <input className={s.inputButton} type="submit" value='Doar' onClick={enviarDados}/>
+                    <input className={s.inputButton}
+                    type="submit"
+                    value='Doar'
+                    onClick={enviarDados}/>
                 </form>
             </section>
 
