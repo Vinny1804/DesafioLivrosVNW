@@ -76,7 +76,6 @@ export default function QueroDoar() {
                     onClick={enviarDados}/>
                 </form>
             </section>
-
         </section>
     )
 }
