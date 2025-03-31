@@ -1,5 +1,5 @@
 .livrosDoados {
-    height: 80vh;   
+    height: 80vh; 
     h2 {
         color: black;     
         display: flex;
@@ -13,6 +13,9 @@
     width: 90%;
     height: 80%;
     margin: 2% 5%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15vw, 1fr));
+    gap: 10px;
 }
 .Livro1 {
     border: solid #005695 3px;
@@ -23,11 +26,16 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+
+    img {
+        height: 15vh;
+    }
     .infoLivro {
         height: 13vh;
         display: flex;
         flex-direction: column;
         align-items: center;
+        text-align: center;
         justify-content: space-evenly;
     }
     p {
@@ -45,8 +53,8 @@
         }
     }
     .listaDeLivros {
-        display: flex;
-        justify-content: center;
+        flex-direction: column;
+        justify-content: space-evenly;
     }
     .Livro1 {
         width: 50vw;

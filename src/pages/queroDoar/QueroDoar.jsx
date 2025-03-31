@@ -10,7 +10,7 @@ export default function QueroDoar() {
     const [image_url, setImage_url] = useState("")
 
     const capturaTitulo = (e) => {
-        setTitulo(e.target.value);
+        setTitulo(e.target.value)
     }
 
     const capturaCategoria = (e) => {
@@ -37,6 +37,7 @@ export default function QueroDoar() {
         }
 
         await axios.post(endPointApi, dadosAEnviar)
+        
     }
 
     return (
@@ -51,23 +52,12 @@ export default function QueroDoar() {
                 </div>
 
                 <form className={s.forms} onSubmit={(e) => e.preventDefault()}>
-                        <fieldset>
-                            <input className={s.inputsFormulario} type="text" placeholder='Titulo' onChange={capturaTitulo}/>
-                        </fieldset>
-
-                        <fieldset>
-                            <input className={s.inputsFormulario} type="text" placeholder='Categoria' onChange={capturaCategoria}/>
-                        </fieldset>
-
-                        <fieldset>
-                            <input className={s.inputsFormulario} type="text" placeholder='Autor' onChange={capturaAutor}/>
-                        </fieldset>
-
-                        <fieldset>
-                            <input className={s.inputsFormulario} type="text" placeholder='Link da Imagem' onChange={capturaImage_Url}/>
-                        </fieldset>
-
-                        <input className={s.inputButton} type="submit" value='Doar' onClick={enviarDados}/>
+                    <input className={s.inputsFormulario} type="text" placeholder='Titulo' onChange={capturaTitulo} />
+                    <input className={s.inputsFormulario} type="text" placeholder='Categoria' onChange={capturaCategoria} required/>
+                    <input className={s.inputsFormulario} type="text" placeholder='Autor' onChange={capturaAutor} required/>
+                    <input className={s.inputsFormulario} type="text" placeholder='Link da Imagem' onChange={capturaImage_Url} required/>
+                    
+                    <input className={s.inputButton} type="submit" value='Doar' onClick={enviarDados}/>
                 </form>
             </section>
 

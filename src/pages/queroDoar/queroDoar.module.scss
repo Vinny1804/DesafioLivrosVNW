@@ -39,20 +39,16 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    fieldset {
-        height: 30%;
-        border: none;
-        width: 90%; 
-    }
+
     .inputsFormulario {
         border: solid #005695 2px;
         border-radius: 15px;
-        width: 100%;
+        width: 90%;
         height: 4vh; 
         font-size: 15px;
         padding-left: 5%;
         font-size: 15px;
-        font-weight: 500;   
+        font-weight: 500;
     }
     input::placeholder {
         color: black;
@@ -61,7 +57,7 @@
 .inputButton {
     background: #005695;
     width: 60%;
-    height: 25%;
+    height: 15%;
     border-radius: 10px;
     font-size: 20px;
     color: white;
