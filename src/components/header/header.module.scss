@@ -12,7 +12,7 @@
 .logoHeader {
     display: flex;
     margin-left: 3%;  
-      
+
     img {
         margin-bottom: 20px;
         padding-right: 10px;
@@ -69,7 +69,7 @@
     }
 }
 
-@media (max-width: 390px) {
+@media(max-width: 500px) {
     .header {
         display: flex;
         flex-direction: column;
@@ -77,26 +77,22 @@
         align-items: center;
         height: 15vh;
         padding-bottom: 5%;
+}
+.logoHeader {
+    height: 60%;
+    margin-top: 2%;
+    h1 {
+        font-size: 22px;
     }
-    .logoHeader {
-        height: 60%;
-        margin-top: 2%;
-        img {
-            height: 40px;
-            width: 50px;
-        }
-        h1 {
-            font-size: 22px;
-        }
+}
+.navHeader {
+    width: 100%;
+    margin-top: 2%;
+    ul {
+        height: 4vh;        
     }
-    .navHeader {
-        width: 100%;
-        margin-top: 2%;
-        ul {
-            height: 4vh;        
-        }
-    }
-    .barraDeBusca {
-        display: none;
-    }
+}
+.barraDeBusca {
+    display: none;
+}
 }

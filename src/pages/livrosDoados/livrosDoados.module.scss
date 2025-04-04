@@ -88,7 +88,7 @@
     cursor: pointer;
 }
 
-@media (max-width: 390px) {
+@media(max-width: 500px) {
     .livrosDoados {
         h2 {
             margin-top: 3%;
@@ -96,12 +96,30 @@
         }
     }
     .listaDeLivros {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        justify-items: center;
+    }
+    .livro {
+        border: solid #005695 3px;
+        border-radius: 20px;
+        width: 80%;
+        height: 30vh;
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
         align-items: center;
+        justify-content: space-evenly;
+        cursor: pointer;
+    
+        img {
+            height: 10vh;
+        }
     }
-    .Livro1 {
-        width: 50vw;
+    .modalContent {
+        padding: 30px;
+
+        img {
+            height: 30vh;
+            width: 30vw;
+        }
     }
 }
