@@ -1,11 +1,24 @@
 import s from './livrosDoados.module.scss'
-import livro from '../../assets/livroOProtagonista.png'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
 export default function LivrosDoados() {
 
     const [livros, setLivros] = useState([])
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const [livroSelecionado, setLivroSelecionado] = useState(null)
+    
+    const openModal = (livro) => {
+        setLivroSelecionado(livro)
+        setIsModalOpen(true)
+    }
+
+    const closeModal = () => {
+        setIsModalOpen(false)
+        setLivroSelecionado(null)
+    }
+
 
     const getLivros = async() => {
         const resposta = await axios.get("https://api-livros-lb7r.onrender.com/livros")
@@ -15,33 +28,35 @@ export default function LivrosDoados() {
         getLivros()
     },[])
 
+
+
     return (
         <section className={s.livrosDoados}>
             <h2>Livros Doados</h2>
             
             <section className={s.listaDeLivros}>
-
-                <section className={s.Livro1}>
-                    <img src={livro} alt="Imagem da capa do livro: O protagonista"/>
-                    <div className={s.infoLivro}>
-                        <p>O protagonista</p>
-                        <p>Susanne Andrade</p>
-                        <p>Ficção</p>
-                    </div>
-                </section>
-
                 {livros.map((item) => (
-                    <section className={s.Livro1}>
-                    <img src={item.image_url} alt={item.titulo}/>
-                    <div className={s.infoLivro}>
-                        <p>{item.titulo}</p>
-                        <p>{item.autor}</p>
-                        <p>{item.categoria}</p>
+                    <section className={s.livro} key={item.id} onClick={() => openModal(item)}>
+                        <img src={item.image_url} alt={item.titulo}/>
+                        <div className={s.infoLivro}>
+                            <p>{item.titulo}</p>
+                            <p>{item.autor}</p>
+                            <p>{item.categoria}</p>
+                        </div>
+                    </section>
+                ))}
+            </section>
+
+            {isModalOpen && livroSelecionado && (
+                <section className={s.modalOverlay} onClick={closeModal}>
+                    <div className={s.modalContent} onClick={(e) => e.stopPropagation()}>
+                        <p>{livroSelecionado.titulo}</p>
+                        <p>{livroSelecionado.autor}</p>
+                        <img src={livroSelecionado.image_url} alt={livroSelecionado.titulo}/>
+                        <button className={s.closeBtn} onClick={closeModal}>X</button>
                     </div>
                 </section>
-                ))}
-
-            </section>
+                )}
 
         </section>
     )
