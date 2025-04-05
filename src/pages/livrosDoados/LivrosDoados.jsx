@@ -6,8 +6,10 @@ export default function LivrosDoados() {
 
     const [livros, setLivros] = useState([])
     const [isModalOpen, setIsModalOpen] = useState(false);
-
+    const [erroAPI, setErroAPI] = useState(false);
     const [livroSelecionado, setLivroSelecionado] = useState(null)
+
+    const [loading, setLoading] = useState(false)
     
     const openModal = (livro) => {
         setLivroSelecionado(livro)
@@ -17,13 +19,27 @@ export default function LivrosDoados() {
     const closeModal = () => {
         setIsModalOpen(false)
         setLivroSelecionado(null)
+        setErroAPI(false)
     }
 
 
     const getLivros = async() => {
-        const resposta = await axios.get("https://api-livros-lb7r.onrender.com/livros")
-        setLivros(resposta.data)
+
+        setLoading(true)
+        try {
+            const resposta = await axios.get("https://api-livros-lb7r.onrender.com/livros")
+            setLivros(resposta.data)
+            
+        } catch (erro) {
+            console.error("Erro ao buscar livros:", erro);
+            setErroAPI(true)
+        } finally {
+            setTimeout(() => {
+                setLoading(false)
+            }, 600)
+        }
     }
+
     useEffect(() => {
         getLivros()
     },[])
@@ -35,7 +51,12 @@ export default function LivrosDoados() {
             <h2>Livros Doados</h2>
             
             <section className={s.listaDeLivros}>
-                {livros.map((item) => (
+                {loading ? (<section className={s.loaderSection}>
+                    <p className={s.loaderText}>Organizando os livros na estante...</p>
+                    <div className={s.progressBar}></div>
+                </section>) : (
+
+                livros.map((item) => (
                     <section className={s.livro} key={item.id} onClick={() => openModal(item)}>
                         <img src={item.image_url} alt={item.titulo}/>
                         <div className={s.infoLivro}>
@@ -44,7 +65,8 @@ export default function LivrosDoados() {
                             <p>{item.categoria}</p>
                         </div>
                     </section>
-                ))}
+                ))
+                )}
             </section>
 
             {isModalOpen && livroSelecionado && (
@@ -57,6 +79,16 @@ export default function LivrosDoados() {
                     </div>
                 </section>
                 )}
+
+            {erroAPI && (
+            <section className={s.modalOverlay} onClick={closeModal}>
+                <div className={s.modalContent} onClick={(e) => e.stopPropagation()}>
+                <p>🚨Parece que os livros fugiram da estante.🚨</p>
+                <p>Já estamos cuidando disso! </p>
+                <button className={s.closeBtn} onClick={closeModal}>X</button>
+                </div>
+            </section>
+            )}
 
         </section>
     )

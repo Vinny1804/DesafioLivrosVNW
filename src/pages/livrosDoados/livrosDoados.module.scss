@@ -123,3 +123,88 @@
         }
     }
 }
+
+
+
+.loaderSection {
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .loaderText {
+        font-weight: bold;
+        font-family: monospace;
+        font-size: 25px;
+        text-align: center;
+    }
+
+    .progressBar {
+        width: 100%;
+        max-width: 300px;
+        height: 8px;
+        background: #ddd;
+        border-radius: 5px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .progressBar::after {
+        content: "";
+        display: block;
+        width: 50%;
+        height: 100%;
+        background: #005695;
+        animation: progressAnimation 1.5s infinite;
+    }
+    @keyframes progressAnimation {
+        0% { width: 0%; }
+        100% { width: 100%; }
+    }
+}
+
+
+
+
+// .loader {
+//     display: flex;
+//     justify-content: center;
+//     width: 90vw;
+// }
+
+// .loader .dot {
+//     height: 15px;
+//     width: 15px;
+//     border-radius: 50%;
+//     border: 2px solid #e8e8e8;
+//     background: #005695;
+//     animation: jump 0.8s ease-in-out infinite alternate;
+// }
+
+// @keyframes jump {
+//     100% {
+//         background: #001B2F;
+//         transform: translateZ(-3rem) scale(1.9);
+//     }
+// }
+
+// .loader .dot:nth-child(1) {
+//     animation-delay: 0.1s;
+// }
+
+// .loader .dot:nth-child(2) {
+//     animation-delay: 0.2s;
+// }
+
+// .loader .dot:nth-child(3) {
+//     animation-delay: 0.3s;
+// }
+
+// .loader .dot:nth-child(4) {
+//     animation-delay: 0.4s;
+// }
+
+// .loader .dot:nth-child(5) {
+//     animation-delay: 0.5s;
+// }
