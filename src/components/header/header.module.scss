@@ -33,6 +33,9 @@
         align-items: center;
         justify-content: space-evenly;             
     }
+    li:hover {
+        text-decoration: underline;
+    }
 }
 .barraDeBusca {
     border: solid 2px white;

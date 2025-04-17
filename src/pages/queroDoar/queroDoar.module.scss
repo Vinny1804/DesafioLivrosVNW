@@ -90,3 +90,82 @@
         width: 90%;
     }
 }
+
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.modalContent {
+    background: white;
+    padding: 50px;
+    border-radius: 8px;
+    position: relative;
+    text-align: center;
+    border: solid #005695 5px;
+
+    img {
+        height: 50vh;
+        width: 20vw;
+    }
+    p {
+        padding-bottom: 3%;
+    }
+}
+.closeBtn {
+    position: absolute;
+    border: none;
+    background-color: transparent;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+
+.loaderSection {
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .loaderText {
+        font-weight: bold;
+        font-family: monospace;
+        font-size: 25px;
+        text-align: center;
+    }
+
+    .progressBar {
+        width: 100%;
+        max-width: 300px;
+        height: 8px;
+        background: #ddd;
+        border-radius: 5px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .progressBar::after {
+        content: "";
+        display: block;
+        width: 50%;
+        height: 100%;
+        background: #005695;
+        animation: progressAnimation 1.5s infinite;
+    }
+    @keyframes progressAnimation {
+        0% { width: 0%; }
+        100% { width: 100%; }
+    }
+}

@@ -9,7 +9,7 @@ import lupa from '../../assets/lupa.png'
 
 export default function Header() {
     return (
-   <BrowserRouter>
+<BrowserRouter>
         <header className={s.header}>
             <section className={s.logoHeader}>
                 <img src={logo} alt="Logo em formato de um livro aberto" />
@@ -34,6 +34,6 @@ export default function Header() {
             <Route path='/livrosDoados' element={<LivrosDoados/>} />
             <Route path='/queroDoar' element={<QueroDoar/>}/>
         </Routes>
-   </BrowserRouter>
+</BrowserRouter>
     )
 }

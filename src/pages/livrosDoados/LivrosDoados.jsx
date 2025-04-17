@@ -44,8 +44,6 @@ export default function LivrosDoados() {
         getLivros()
     },[])
 
-
-
     return (
         <section className={s.livrosDoados}>
             <h2>Livros Doados</h2>

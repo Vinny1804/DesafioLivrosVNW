@@ -9,8 +9,18 @@ export default function QueroDoar() {
     const [autor, setAutor] = useState("")
     const [image_url, setImage_url] = useState("")
 
-    const enviarDados = async() => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [modalValidacao, setModalValidacao] = useState(false)
+    const [loading, setLoading] = useState(false)
 
+
+    const closeModal = () => {
+        setIsModalOpen(false)
+        setModalValidacao(false)
+    }
+
+
+    const enviarDados = async() => {
         const endPointApi = "https://api-livros-lb7r.onrender.com/doar"
 
         const dadosAEnviar = {
@@ -19,14 +29,31 @@ export default function QueroDoar() {
             autor,
             image_url
         }
-        await axios.post(endPointApi, dadosAEnviar)
 
-        setTitulo('')
-        setCategoria('')
-        setAutor('')
-        setImage_url('')
+        if (!titulo || !categoria || !autor || !image_url) {
+            setModalValidacao(true)
+            return
+        }
 
-        alert("Doação recebida! Obrigado!")
+        setLoading(true)
+
+        try {
+            await axios.post(endPointApi, dadosAEnviar)
+
+            setTitulo('')
+            setCategoria('')
+            setAutor('')
+            setImage_url('')
+            
+        } catch (erro) {
+            console.error("Erro ao enviar a doação:", erro);
+            alert("Ocorreu um erro ao enviar sua doação. Tente novamente.");
+        } finally {
+            setTimeout(() => {
+                setLoading(false)
+                setIsModalOpen(true)
+            }, 1500)
+        }
     }
 
     return (
@@ -47,34 +74,57 @@ export default function QueroDoar() {
                     placeholder='Titulo'
                     value={titulo}
                     onChange={(e) => setTitulo(e.target.value)}
-                    required/>
+                    />
 
                     <input className={s.inputsFormulario}
                     type="text"
                     placeholder='Categoria'
                     value={categoria}
                     onChange={(e) => setCategoria(e.target.value)}
-                    required/>
+                    />
 
                     <input className={s.inputsFormulario}
                     type="text"
                     placeholder='Autor'
                     value={autor}
                     onChange={(e) => setAutor(e.target.value)}
-                    required/>
+                    />
 
                     <input className={s.inputsFormulario}
                     type="text"
                     placeholder='Link da Imagem'
                     value={image_url}
                     onChange={(e) => setImage_url(e.target.value)}
-                    required/>
+                    />
                     
                     <input className={s.inputButton}
                     type="submit"
                     value='Doar'
                     onClick={enviarDados}/>
                 </form>
+
+                {loading &&
+                <section className={s.loaderSection}>
+                    <p className={s.loaderText}>Enviando Livro...</p>
+                    <div className={s.progressBar}></div>
+                </section>}
+
+                {isModalOpen && (
+                    <section className={s.modalOverlay} onClick={closeModal}>
+                        <div className={s.modalContent} onClick={(e) => e.stopPropagation()}>
+                            <p>Livro doado com sucesso!</p>
+                            <p>Valeu pela contribuição!</p>
+                            <button className={s.closeBtn} onClick={closeModal}>X</button>
+                        </div>
+                    </section>)}
+
+                    {modalValidacao && (
+                    <section className={s.modalOverlay} onClick={closeModal}>
+                        <div className={s.modalContent} onClick={(e) => e.stopPropagation()}>
+                            <p>Ei! Não esquece de preencher tudo direitinho antes de doar!</p>                            
+                            <button className={s.closeBtn} onClick={closeModal}>X</button>
+                        </div>
+                    </section>)}
             </section>
         </section>
     )
